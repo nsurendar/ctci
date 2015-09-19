@@ -117,5 +117,56 @@ public class ArrayAndString {
 
 
     }
+
+
     //end 1.3
+
+    //Q 1.4
+    public static void palindromePermutation() {
+        String pali = "Rats live on no evil star";
+        System.out.println(palindromePermutation(pali));
+    }
+
+    public static boolean palindromePermutation(String str) {
+
+        // ascii value of space is 32 -> z 's 122 - 32= 90
+        int[] arr = new int[90];
+        str = str.toLowerCase();
+
+        for(int i=0;i<str.length();i++)
+        {
+           // if(str.charAt(i)!=' ') since we subtract with ' '
+            arr[((int)str.charAt(i)-(int)' ')]++;
+        }
+        boolean isEven = (str.length()%2)==0;
+        int count=0;
+        boolean oneOdd=false;
+        for(int i=0;i<90;i++)
+        {
+            if(isEven)
+            {
+                if(arr[i]%2!=0)
+                    return false;
+            }
+            else
+            {
+                if(arr[i]%2==1 && !oneOdd)
+                {
+                    oneOdd = true;
+                }
+                else if (arr[i]%2==0)
+                {
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+
+    }
+    //end 1.4
 }
