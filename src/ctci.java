@@ -26,7 +26,10 @@ public class ctci {
         //ArrayAndString.oneWay();
 
         //question 1.6
-        ArrayAndString.stringCompression();
+        //ArrayAndString.stringCompression();
+
+        //question 1.8
+        ArrayAndString.zeroMatrix();
 
     }
 

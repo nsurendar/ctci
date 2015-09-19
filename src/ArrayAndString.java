@@ -168,6 +168,8 @@ public class ArrayAndString {
         return true;
 
     }
+
+
     //end 1.4
 
     //Q 1.5
@@ -221,7 +223,49 @@ public class ArrayAndString {
 
 // Q 1.6
     public static void stringCompression() {
+        String str = "aaaabb";
+        System.out.println(str);
+        System.out.println(stringCompression(str));
+    }
+
+    public static String stringCompression(String str) {
+        StringBuffer ret = new StringBuffer();
+        char prev= str.charAt(0);
+        int prevC=1;
+        for(int i=1;i<str.length();i++)
+        {
+            char cur = str.charAt(i);
+            if(prev==cur)
+            {
+                prevC++;
+            }
+            else
+            {
+                ret.append(""+prev+""+prevC);
+                prev = cur;
+                prevC = 1;
+            }
+        }
+
+        ret.append(""+prev+prevC);
+
+        if(ret.length()<str.length())
+        {
+            return ret.toString();
+        }
+        else
+            return str;
     }
 
     //end 1.6
+
+
+    //Q 1.8
+    public static void zeroMatrix() {
+    }
+
+    public static void zeroMatrix(int[][] mat) {
+        
+    }
+    //end 1.8
 }
