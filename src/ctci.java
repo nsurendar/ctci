@@ -14,7 +14,7 @@ public class ctci {
         //ArrayAndString.isUnique();
 
         //question 1.2
-        ArrayAndString.isPermutation();
+        //ArrayAndString.isPermutation();
 
         //question 1.3
         ArrayAndString.changeString();

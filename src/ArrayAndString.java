@@ -76,7 +76,46 @@ public class ArrayAndString {
 
     //question 1.3
     public static void changeString() {
-        
+        String str = "abc d e f";
+        int spaces = 3;
+        int excess = 7;
+        char[] arr = new char[str.length() + spaces * 2 + 1 + excess];
+        for (int i = 0; i < str.length(); i++) {
+            arr[i] = str.charAt(i);
+        }
+        for (int i = str.length(); i < arr.length; i++) {
+            arr[i] = ' ';
+        }
+        changeString(arr, str.length());
+        System.out.println("\"" + new String(arr) + "\"");
+    }
+
+    public static void changeString(char[] arr,int len)
+    {
+
+        int j=0;
+        int space =0;
+        for(int i=0;i<len;i++) {
+            if(arr[i]==' ')
+                space++;
+        }
+        int z = len + space * 2;
+
+        for(int i=len -1;i>=0;i--) {
+
+            if(arr[i] >= 'a' && arr[i] <= 'z' || arr[i] >= 'A' && arr[i] <= 'Z' )
+            {
+                arr[z--] = arr[i];
+            }
+            else
+            {
+                arr[z--] = '0';
+                arr[z--] = '2';
+                arr[z--] = '%';
+            }
+        }
+
+
     }
     //end 1.3
 }
