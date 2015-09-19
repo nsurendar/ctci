@@ -169,4 +169,59 @@ public class ArrayAndString {
 
     }
     //end 1.4
+
+    //Q 1.5
+    enum changeType{Insert,Remove,Replace}
+
+    public static void oneWay() {
+        String a = "pale";
+        String b = "bake";
+        boolean isOneEdit = oneWay(a, b);
+        System.out.println(a + ", " + b + ": " + isOneEdit);
+    }
+
+     static boolean oneWay(String str1,String str2) {
+
+        int i=0;
+        int j=0;
+        int count=0;
+        if(Math.abs(str1.length()-str2.length())>1)
+            return false;
+
+        while(i<str1.length() && j<str2.length())
+        {
+            if(str1.charAt(i)==str2.charAt(j))
+            {
+                i++;
+                j++;
+
+            }
+            else if(count <1)
+            {
+                count++;
+
+                if(i+1 < str1.length() && str1.charAt(i+1)==str2.charAt(j)) i++;
+                else if(j+1 < str2.length() && str1.charAt(i)==str2.charAt(j+1)) j++;
+                else
+                {
+                    i++;
+                    j++;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        return true;
+
+    }
+    //end 1.5
+
+// Q 1.6
+    public static void stringCompression() {
+    }
+
+    //end 1.6
 }

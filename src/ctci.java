@@ -20,7 +20,13 @@ public class ctci {
         //ArrayAndString.changeString();
 
         //question 1.4
-        ArrayAndString.palindromePermutation();
+        //ArrayAndString.palindromePermutation();
+
+        //question 1.5
+        //ArrayAndString.oneWay();
+
+        //question 1.6
+        ArrayAndString.stringCompression();
 
     }
 
