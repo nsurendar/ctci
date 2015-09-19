@@ -168,8 +168,6 @@ public class ArrayAndString {
         return true;
 
     }
-
-
     //end 1.4
 
     //Q 1.5
@@ -262,10 +260,128 @@ public class ArrayAndString {
 
     //Q 1.8
     public static void zeroMatrix() {
+        int nrows = 10;
+        int ncols = 15;
+        int[][] matrix = {{1,1},{1,0}};
+
+       // AssortedMethods.printMatrix(matrix);
+
+        zeroMatrix(matrix);
+
+        System.out.println();
+
+       // AssortedMethods.printMatrix(matrix);
     }
 
     public static void zeroMatrix(int[][] mat) {
-        
+
+        int rowcount= mat.length;
+        int colcount = mat[0].length;
+        boolean[] row = new boolean[rowcount];
+        boolean[] col = new boolean[colcount];
+
+        for(int i=0;i<rowcount;i++)
+        {
+            for(int j=0;j<colcount;j++)
+            {
+                if(mat[i][j] == 0)
+                {
+                    row[i]=true;
+                    col[j]=true;
+                }
+            }
+        }
+
+
+        for(int i=0;i<rowcount;i++)
+        {
+            if(row[i])
+            {
+                for(int j=0;j<colcount;j++)
+                {
+                    mat[i][j]=0;
+                }
+            }
+        }
+
+        for(int j=0;j<colcount;j++)
+        {
+            if(col[j])
+            {
+                for(int i=0;i<rowcount;i++)
+                {
+                    mat[i][j]=0;
+                }
+            }
+        }
+
+
     }
     //end 1.8
+
+//question 1.9
+    public static void isSubString() {
+        String[][] pairs = {{"apple", "pleap"}, {"waterbottle", "erbottlewat"}, {"camera", "macera"}};
+        for (String[] pair : pairs) {
+            String word1 = pair[0];
+            String word2 = pair[1];
+            boolean is_rotation = isSubString(word1, word2);
+            System.out.println(word1 + ", " + word2 + ": " + is_rotation);
+        }
+    }
+
+
+    static boolean check(String s1,String s2, int s1m,int s2m)
+    {
+        if(s1m>=0&&s2m>=0 && s1m < s1.length() && s2m<s2.length())
+        {
+            for(int i=0;i<s1.length();i++)
+            {
+                if(!(s1.charAt(s1m)==s2.charAt(s2m)))
+                {
+                    return false;
+                }
+
+                s1m++;
+                s2m++;
+                if(s1m>(s1.length()-1)||s2m>(s1.length()-1))
+                {
+                    s1m = s1m%(s1.length());
+                    s2m =s2m%(s2.length());
+                }
+            }
+        }
+        else
+            return false;
+        return true;
+    }
+    public static boolean isSubString(String s1,String s2) {
+
+        int s1m,s2m;
+        s1m=-1;s2m=-1;
+
+        if(s1.length()!=s2.length())
+            return false;
+
+        else
+        {
+            for(int i=0;i<s1.length();i++)
+            {
+                if(s2.indexOf(s1.charAt(i))>=0)
+                {
+                    s1m=i;
+                    s2m=s2.indexOf(s1.charAt(i));
+                    if(check(s1,s2,s1m,s2m))
+                        return true;
+                    else
+                        continue;
+                }
+            }
+
+
+        }
+        return false;
+    }
+
+    //end 1.9
 }

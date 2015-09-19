@@ -29,7 +29,10 @@ public class ctci {
         //ArrayAndString.stringCompression();
 
         //question 1.8
-        ArrayAndString.zeroMatrix();
+       // ArrayAndString.zeroMatrix();
+
+        //question 1.9
+        ArrayAndString.isSubString();
 
     }
 
