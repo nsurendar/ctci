@@ -9,9 +9,15 @@ public class ctci {
 
     static void chap1()
     {
-        //question 1.1
-        //new ArrayAndString().isUnique();
 
+        //question 1.1
+        //ArrayAndString.isUnique();
+
+        //question 1.2
+        ArrayAndString.isPermutation();
+
+        //question 1.3
+        ArrayAndString.changeString();
 
     }
 
