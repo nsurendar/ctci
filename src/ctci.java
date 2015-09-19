@@ -17,10 +17,7 @@ public class ctci {
         //ArrayAndString.isPermutation();
 
         //question 1.3
-        //ArrayAndString.changeString();
-
-        //question 1.4
-        ArrayAndString.palindromePermutation();
+        ArrayAndString.changeString();
 
     }
 
