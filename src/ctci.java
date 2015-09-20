@@ -32,7 +32,10 @@ public class ctci {
        // ArrayAndString.zeroMatrix();
 
         //question 1.9
-        ArrayAndString.isSubString();
+       // ArrayAndString.isSubString();
+
+
+        LinkedLists.gen();
 
     }
 
