@@ -1,0 +1,60 @@
+// This is the text editor interface. 
+// Anything you type or change here will be seen by the other person in real time
+
+
+import java.io.*;
+import java.util.*;
+
+
+
+class powerSet
+{
+    
+    
+    static ArrayList<ArrayList<Integer>> getSubs(ArrayList<Integer> set,int index)
+    {
+         ArrayList<ArrayList<Integer>>  allsubs;
+         
+         if(set.size()==index)
+         {
+             allsubs =  new ArrayList<ArrayList<Integer>>();
+             
+             allsubs.add(new ArrayList<Integer>());
+         }
+         else
+         {
+             allsubs = getSubs(set,index+1);
+             int item = set.get(index);
+             ArrayList<ArrayList<Integer>> moresets = new ArrayList<ArrayList<Integer>>();
+             
+             for(ArrayList<Integer> sub:allsubs)
+             {
+                 ArrayList<Integer> newsubs = new ArrayList<Integer>();
+                 newsubs.addAll(sub);
+                 newsubs.add(item);
+                 moresets.add(newsubs);
+             }
+             allsubs.addAll(moresets);
+         }
+         return allsubs;
+    }
+    
+    
+    
+    public static void main(String args[])
+    {
+        
+        ArrayList<Integer> set = new ArrayList<Integer>();
+        
+        set.add(1);
+        set.add(2);
+        set.add(3);
+         set.add(4);
+        ArrayList<ArrayList<Integer>> arrs = getSubs(set,0);
+        
+        for(ArrayList<Integer> s:arrs)
+        {
+            System.out.println(s.toString());
+        }
+    }
+}
